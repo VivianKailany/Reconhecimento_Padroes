@@ -10,12 +10,12 @@
   
      y = β0 + β1 ⋅X+ϵ
   
-Onde:\
-β0: é o intercepto da reta (valor de y quando X=0),\
-β1: é o coeficiente de inclinação da reta,\
-ϵ é o erro aleatório.
+  Onde:\
+  β0: é o intercepto da reta (valor de y quando X=0),\
+  β1: é o coeficiente de inclinação da reta,\
+  ϵ é o erro aleatório.
 
-Os coeficientes β0 e β1 são calculados usando métodos de mínimos quadrados, minimizando a soma dos quadrados dos resíduos (diferença entre os valores observados e os valores previstos).
+  Os coeficientes β0 e β1 são calculados usando métodos de mínimos quadrados, minimizando a soma dos quadrados dos resíduos (diferença entre os valores observados e os valores previstos).
 
 - **Regressão Logística**
   
@@ -25,11 +25,11 @@ Os coeficientes β0 e β1 são calculados usando métodos de mínimos quadrados,
 ​
 
   
-Onde:\
-β0: é o intercepto da função logística,\
-β1: é o coeficiente associado à variável independente
-X,\
-e é a base do logaritmo natural.
+  Onde:\
+  β0: é o intercepto da função logística,\
+  β1: é o coeficiente associado à variável independente
+  X,\
+  e é a base do logaritmo natural.
 
 - **Regressão Polinomial**
   
@@ -37,18 +37,18 @@ e é a base do logaritmo natural.
   
     y = β0+β1⋅X+β2⋅X2+…+βn⋅Xn+ϵ
   
-Onde:\
-β0, β1,…, βn são os coeficientes a serem estimados,\
-ϵ é o erro aleatório.
+  Onde:\
+  β0, β1,…, βn são os coeficientes a serem estimados,\
+  ϵ é o erro aleatório.
 
 - **Classificadores Estatísticos**
   
-Os classificadores estatísticos são métodos que categorizam observações com base em informações estatísticas das variáveis independentes. Alguns exemplos incluem:
-
-Naive Bayes: Calcula a probabilidade de pertencer a uma classe dada a evidência fornecida pelas variáveis independentes, assumindo independência condicional entre as variáveis.
-
-Árvores de Decisão: Estruturam decisões em forma de árvore, dividindo o espaço de características em regiões distintas com base em regras estatísticas.
-
-K-Nearest Neighbors (KNN): Classifica novos pontos com base na maioria dos k vizinhos mais próximos no espaço de características, usando medidas de distância.
-
-Cada classificador possui métodos distintos de cálculo e ajuste, geralmente envolvendo técnicas estatísticas para decisão de classe.
+  Os classificadores estatísticos são métodos que categorizam observações com base em informações estatísticas das variáveis independentes. Alguns exemplos incluem:
+  
+  Naive Bayes: Calcula a probabilidade de pertencer a uma classe dada a evidência fornecida pelas variáveis independentes, assumindo independência condicional entre as variáveis.
+  
+  Árvores de Decisão: Estruturam decisões em forma de árvore, dividindo o espaço de características em regiões distintas com base em regras estatísticas.
+  
+  K-Nearest Neighbors (KNN): Classifica novos pontos com base na maioria dos k vizinhos mais próximos no espaço de características, usando medidas de distância.
+  
+  Cada classificador possui métodos distintos de cálculo e ajuste, geralmente envolvendo técnicas estatísticas para decisão de classe.
