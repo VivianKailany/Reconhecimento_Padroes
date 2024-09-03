@@ -1,22 +1,17 @@
 import numpy as np
+from sklearn.model_selection import StratifiedKFold
 from metricas import acuracia, precisao, revocacao, f1
 
 def validacao_cruzada(modelo, X, y, num_folds=10):
-    fold_size = len(X) // num_folds
+    skf = StratifiedKFold(n_splits=num_folds)
     acuracias = []
     precisoes = []
     revocacoes = []
     f1_scores = []
 
-    for i in range(num_folds):
-        inicio_fold = i * fold_size
-        fim_fold = (i + 1) * fold_size
-
-        X_validacao = X[inicio_fold:fim_fold]
-        y_validacao = y[inicio_fold:fim_fold]
-
-        X_treinamento = np.concatenate([X[:inicio_fold], X[fim_fold:]])
-        y_treinamento = np.concatenate([y[:inicio_fold], y[fim_fold:]])
+    for treino_index, validacao_index in skf.split(X, y):
+        X_treinamento, X_validacao = X[treino_index], X[validacao_index]
+        y_treinamento, y_validacao = y[treino_index], y[validacao_index]
 
         modelo.fit_gd(X_treinamento, y_treinamento)
         previsoes = modelo.predict(X_validacao)
@@ -32,8 +27,13 @@ def validacao_cruzada(modelo, X, y, num_folds=10):
         
         f1_fold = f1(precisao_fold, revocacao_fold)
         f1_scores.append(f1_fold)
+        
+    media_acuracia = np.mean(acuracias)
+    media_precisao = np.mean(precisoes)
+    media_revocacao = np.mean(revocacoes)
+    media_f1 = np.mean(f1_scores)
 
-    return acuracias, precisoes, revocacoes, f1_scores
+    return media_acuracia, media_precisao, media_revocacao, media_f1
 
 def calcular_estatisticas_metricas(metricas):
     media_metricas = np.mean(metricas)
